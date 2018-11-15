@@ -3,6 +3,7 @@ const secret = require('../public/config/index');
 
 function getTokenFromHeaders(req) {
   if (req.headers.authorization && req.headers.authorization.split(' ')[0] === 'Token') {
+    console.log(req.headers.authorization.split(' ')[1]);
     return req.headers.authorization.split(' ')[1];
   }
   return null;
